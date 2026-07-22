@@ -45,14 +45,15 @@ export const FINAL_MESSAGE = `Thank you for being you, ${FRIEND_NAME}.\nA friend
 
 // ─────────────────────────────────────────────────
 //  5.  THE MUSIC  (plays throughout the site)
-//  Drop your file here:  public/music/chanson.mp3
+//  Drop your file here:  public/music/chanson-v2.mp3
+//  (renaming the file forces browsers to fetch the new track)
 //  Friendship song ideas (English-language):
 //    • "Count on Me" — Bruno Mars
 //    • "You've Got a Friend" — Carole King
 //    • "Lean on Me" — Bill Withers
 //    • "I'll Be There for You" — The Rembrandts
 // ─────────────────────────────────────────────────
-export const MUSIC_URL = "/music/chanson.mp3"
+export const MUSIC_URL = "/music/chanson-v2.mp3"
 
 
 // ─────────────────────────────────────────────────
@@ -89,4 +90,4 @@ export const ALBUM_VIDEOS = [
 // ─────────────────────────────────────────────────
 //  9.  THE DEPLOYED SITE URL  (for the QR code)
 // ─────────────────────────────────────────────────
-export const SITE_URL = "https://your-site.vercel.app"
+export const SITE_URL = "https://maz-sooty.vercel.app"
