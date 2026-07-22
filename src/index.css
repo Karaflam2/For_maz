@@ -1,0 +1,37 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --rose: #c1440e;
+  --rose-light: #f0c896;
+  --rose-pale: #ffe9d6;
+  --rouge: #b5451f;
+  --cream: #fff8f0;
+  --gold: #d4af37;
+  --text-dark: #3a1c0a;
+  --text-mid: #9c3d1a;
+  --deep: #1f0f02;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--cream);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Scrollbar for album if needed */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--rose-light); border-radius: 2px; }
+
+@keyframes spin-phone {
+  0%   { transform: rotate(0deg); }
+  30%  { transform: rotate(90deg); }
+  70%  { transform: rotate(90deg); }
+  100% { transform: rotate(0deg); }
+}

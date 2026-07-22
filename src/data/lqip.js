@@ -1,0 +1,9 @@
+// ⚙️  AUTO-GÉNÉRÉ par scripts/optimize-images.mjs — ne pas éditer à la main.
+// Placeholders flous (base64) affichés instantanément le temps que la vraie photo arrive.
+
+export const LQIP = {
+  "/photos/01.webp": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAABwBwCdASoYACsAPu1msVEppSSiqrgKATAdiWgAnTLCRx+3g5YVvX2A3vv8ZQGfEuKLgSfrrgLG+8GLX49ZRSjrliO9oAD+5Rww2jHz7FT1vO3iPTiZ+eIDADE8OG3buJMM60DAVPBwHFWLDTo0tck0HNTDAdzSBymcA9GhydMO9TIsNdFzYkdVIJ/Jl/vrMlvViCrMf4BsRaXUi9myUqucMJ0cAqIoDKhQeBZF/sK4Ea2gQhIueB7u4a6Z0266ZXy1RyYHfa5rfhOZYZvJO3EMPWW2n5HxANRKBG0W+1dwAA==",
+  "/photos/02.webp": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAACwBgCdASoYACsAPu1mrFAppSQiqrgMATAdiWQAnTMARteD8ktl0ILHsP2yq6+U+RtmLKL1tFfsunOInk2dgAD+7wqzPXPV0Yg6MYZWz07OvO19rzBQrewrBH95qlpXd+ujvPtEZsUmvB3fdP36IvVinQRSNl64jAgW/d1/GsqADNv4ZWEpmZbnKtDAIEcYRahRZT16xi27x3GtXVVF5SvGX5pFFC28vPaz5IDIq1a2GliZZbTQYupVfOJ92hQkhP/g31wbxJY9xhisWpZA41tC6Q4s1d7peM4fkpWijzgN0LsPAAA=",
+  "/photos/03.webp": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBQCdASoYABIAPuFep02opSOiMAwBEBwJYgCxHt10bEv6H5VI1JjXFK6r4JZ7+uUfMfvQAP6NgM88X2s3OITnnmICjCmQ/rMHZvpqVSg5WiPMAlD+u4qWZvgtgwHKKD03PcONwUtI8dhk2xmmEns0q4riQ0iaV0AYNqeM/J+duxti8/Fbc6hw7VO9e42Mvd6xhu0L9pQAAA==",
+  "/photos/04.webp": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAACwBgCdASoYACsAPu1mrFAppSQiqrgMATAdiWQAnTMARteD8ktl0ILHsP2yq6+U+RtmLKL1tFfsunOInk2dgAD+7wqzPXPV0Yg6MYZWz07OvO19rzBQrewrBH95qlpXd+ujvPtEZsUmvB3fdP36IvVinQRSNl64jAgW/d1/GsqADNv4ZWEpmZbnKtDAIEcYRahRZT16xi27x3GtXVVF5SvGX5pFFC28vPaz5IDIq1a2GliZZbTQYupVfOJ92hQkhP/g31wbxJY9xhisWpZA41tC6Q4s1d7peM4fkpWijzgN0LsPAAA="
+}

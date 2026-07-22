@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QR Code</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(145deg, #fff6ec, #ffe9d6);
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 28px; padding: 40px 20px;
+    }
+    h1 { color: #9c3d1a; font-size: 1.4rem; letter-spacing: .05em; text-align: center; }
+    p  { color: #c1440e99; font-size: .9rem; text-align: center; font-style: italic; }
+    #qr-raw { display: none; }
+    canvas#heartCanvas {
+      border-radius: 16px;
+      box-shadow: 0 10px 48px #c1440e44;
+    }
+    button {
+      padding: 12px 36px;
+      background: #c1440e; color: #fff;
+      border: none; border-radius: 50px;
+      font-size: 1rem; font-family: inherit;
+      cursor: pointer; transition: background .2s;
+      letter-spacing: .05em;
+    }
+    button:hover { background: #9c3d1a; }
+  </style>
+</head>
+<body>
+  <h1>✨ QR Code — your-site.vercel.app</h1>
+
+  <div id="qr-raw"></div>
+  <canvas id="heartCanvas" width="320" height="320"></canvas>
+  <button onclick="download()">⬇ Download as PNG</button>
+  <p>Send the image — scanning it opens the site directly</p>
+
+  <script>
+    const URL = 'https://your-site.vercel.app'
+    const SIZE = 320
+
+    // Génère le QR invisible
+    new QRCode(document.getElementById('qr-raw'), {
+      text: URL,
+      width: 512,
+      height: 512,
+      colorDark: '#c1440e',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H,
+    })
+
+    // Attend que le QR soit rendu puis dessine le cœur
+    setTimeout(() => {
+      const src = document.querySelector('#qr-raw canvas')
+      if (src) draw(src)
+    }, 300)
+
+    function draw(src) {
+      const canvas = document.getElementById('heartCanvas')
+      const ctx = canvas.getContext('2d')
+      const S = SIZE
+
+      ctx.clearRect(0, 0, S, S)
+
+      // Fond blanc en forme de cœur "carte à jouer" (♥)
+      // Les côtés droits garantissent que les 3 marqueurs de coin du QR restent visibles
+      const scale = S / 300
+      ctx.save()
+      ctx.scale(scale, scale)
+      heartPath(ctx, 300)
+      ctx.fillStyle = '#ffffff'
+      ctx.fill()
+
+      // QR à l'intérieur (marges de 45px dans un 300x300)
+      const off = 45
+      const qrSize = 300 - off * 2  // 210px
+      heartPath(ctx, 300)
+      ctx.clip()
+      ctx.drawImage(src, off, off, qrSize, qrSize)
+      ctx.restore()
+
+      // Bordure rose
+      ctx.save()
+      ctx.scale(scale, scale)
+      heartPath(ctx, 300)
+      ctx.strokeStyle = '#c1440e'
+      ctx.lineWidth = 3
+      ctx.globalAlpha = 0.65
+      ctx.stroke()
+      ctx.restore()
+
+      // Mini symbole au centre
+      ctx.font = `${Math.round(S * 0.12)}px serif`
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.globalAlpha = 1
+      ctx.fillStyle = '#c1440e'
+      ctx.fillText('✨', S / 2, S / 2)
+    }
+
+    // Cœur "carte à jouer" pour un conteneur de taille `s`
+    function heartPath(ctx, s) {
+      const r = s / 300
+      ctx.beginPath()
+      ctx.moveTo(150*r, 65*r)
+      ctx.bezierCurveTo(150*r, 35*r, 108*r, 12*r, 78*r, 12*r)
+      ctx.bezierCurveTo(42*r,  12*r, 18*r,  38*r, 18*r, 72*r)
+      ctx.lineTo(18*r, 232*r)
+      ctx.bezierCurveTo(18*r,  260*r, 85*r,  282*r, 150*r, 282*r)
+      ctx.bezierCurveTo(215*r, 282*r, 282*r, 260*r, 282*r, 232*r)
+      ctx.lineTo(282*r, 72*r)
+      ctx.bezierCurveTo(282*r, 38*r,  258*r, 12*r,  222*r, 12*r)
+      ctx.bezierCurveTo(192*r, 12*r,  150*r, 35*r,  150*r, 65*r)
+      ctx.closePath()
+    }
+
+    function download() {
+      const link = document.createElement('a')
+      link.download = 'qr-code.png'
+      link.href = document.getElementById('heartCanvas').toDataURL('image/png')
+      link.click()
+    }
+  </script>
+</body>
+</html>
